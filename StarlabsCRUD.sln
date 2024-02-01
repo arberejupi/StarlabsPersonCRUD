@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarlabsCRUD", "StarlabsCRUD\StarlabsCRUD.csproj", "{99E44D00-5B6B-4130-AE23-EA875D76DD32}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99E44D00-5B6B-4130-AE23-EA875D76DD32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99E44D00-5B6B-4130-AE23-EA875D76DD32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99E44D00-5B6B-4130-AE23-EA875D76DD32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99E44D00-5B6B-4130-AE23-EA875D76DD32}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39BC30F0-F1CC-4EB8-A282-67F709290274}
+	EndGlobalSection
+EndGlobal
