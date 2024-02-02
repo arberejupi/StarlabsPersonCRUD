@@ -1,10 +1,20 @@
 using Microsoft.EntityFrameworkCore;
 using StarlabsCRUD.Data;
+using StarlabsCRUD.Services;
+using StarlabsCRUD.Validators;
+using StarlabsCRUD.Models;
+using FluentValidation;
+using StarlabsCRUD.Filters;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
-builder.Services.AddControllers();
+builder.Services.AddScoped<PersonService>();
+builder.Services.AddTransient<IValidator<Person>, PersonValidator>();
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<GlobalExceptionFilter>();
+});
 builder.Services.AddDbContext<DataContext>(options=>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
