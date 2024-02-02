@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using StarlabsCRUD.Data;
 using StarlabsCRUD.Models;
 using StarlabsCRUD.Services;
+using StarlabsCRUD.Interfaces;
 
 namespace StarlabsCRUD.Controllers
 {
@@ -12,9 +13,9 @@ namespace StarlabsCRUD.Controllers
     public class PersonController : ControllerBase
     {
         private readonly DataContext _context;
-        private readonly PersonService _personService;
+        private readonly IPersonService _personService;
 
-        public PersonController(DataContext context, PersonService personService)
+        public PersonController(DataContext context, IPersonService personService)
         {
             _context = context;
             _personService = personService;

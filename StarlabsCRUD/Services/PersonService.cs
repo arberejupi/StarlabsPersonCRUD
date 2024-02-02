@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using StarlabsCRUD.Data;
 using StarlabsCRUD.Models;
+using StarlabsCRUD.Interfaces;
 
 namespace StarlabsCRUD.Services
 {
@@ -12,7 +13,7 @@ namespace StarlabsCRUD.Services
             Errors = errors;
         }
     }
-    public class PersonService
+    public class PersonService : IPersonService
     {
         private readonly DataContext _dataContext;
         private readonly IValidator<Person> _personValidator;

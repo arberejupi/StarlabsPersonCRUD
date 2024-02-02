@@ -5,21 +5,23 @@ using StarlabsCRUD.Validators;
 using StarlabsCRUD.Models;
 using FluentValidation;
 using StarlabsCRUD.Filters;
+using StarlabsCRUD.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<DataContext>(); 
 builder.Services.AddScoped<PersonService>();
 builder.Services.AddTransient<IValidator<Person>, PersonValidator>();
+builder.Services.AddScoped<IPersonService, PersonService>();
 builder.Services.AddControllers(options =>
 {
     options.Filters.Add<GlobalExceptionFilter>();
 });
-builder.Services.AddDbContext<DataContext>(options=>
+builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
